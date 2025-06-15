@@ -8,7 +8,7 @@ const app = express()
 
 ConnectDB()
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: '*',
     credentials: true                // Allow cookies, headers
 }))
 app.use(express.json());
