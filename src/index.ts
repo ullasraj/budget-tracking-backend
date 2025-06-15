@@ -8,9 +8,11 @@ const app = express()
 
 ConnectDB()
 app.use(cors({
-    origin: 'https://budget-tracking-frontend-udcr.onrender.com/',
-    credentials: true                // Allow cookies, headers
-}))
+  origin: true,
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(express.json());
 
 app.use('/api/v1/auth', authRoutes);
